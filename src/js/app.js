@@ -1,3 +1,2 @@
-import orderByProps from './orderByProps';
+// import orderByProps from './orderByProps';
 
-//console.log(a);

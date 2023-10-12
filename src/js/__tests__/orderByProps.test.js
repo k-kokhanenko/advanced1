@@ -1,23 +1,16 @@
 import orderByProps from '../orderByProps';
 
-/*
-test('Character ok', () => {
-  const obj = new Character('name', 'Magician');
-  expect(obj.name).toBe('name');
-  expect(obj.type).toBe('Magician');
+test('orderByProps', () => {
+  const obj = {
+    name: 'мечник', health: 10, level: 2, attack: 80, defence: 40,
+  };
+  const result = orderByProps(obj, ['name', 'level']);
+  const correct = [
+    { key: 'name', value: 'мечник' },
+    { key: 'level', value: 2 },
+    { key: 'attack', value: 80 },
+    { key: 'defence', value: 40 },
+    { key: 'health', value: 10 },
+  ];
+  expect(result).toEqual(correct);
 });
-
-test('Character with error type', () => {
-  expect(() => {
-    const obj = new Character('name', 'SomeType');
-    console.log(obj.name);
-  }).toThrowError('Передан не подходящий тип');
-});
-
-test('Character with error name', () => {
-  expect(() => {
-    const obj = new Character('LongLongLongName', 'Magician');
-    console.log(obj.name);
-  }).toThrowError('Длина имени должна быть в диапазоне 2-10 символов');
-});
-*/
